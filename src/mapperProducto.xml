@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dawi">
+	<resultMap type="ProductoIbatis" id="resultProducto">
+		<id column="idproducto" property="idproducto"/>
+		<result column="nomprod" property="nomprod"/>
+		<result column="precio" property="precio"/>
+		<result column="descripcion" property="descripcion"/>
+		<result column="foto" property="foto"/>
+		<result column="fotoBytes" property="fotoBytes"/>
+		<result column="idcategoria" property="idcategoria"/>
+		<result column="stock" property="stock"/>
+	</resultMap>
+	<resultMap type="ProductoIbatis" id="resultFoto">
+		<result column="foto" property="foto"/>
+	</resultMap>
+	
+	<select id="SQL_listarProductos" statementType="CALLABLE" resultMap="resultProducto">
+		call sp_listAllMedicamentos();
+	</select>
+	
+	<select id="SQL_listarProductosAtNombre" statementType="CALLABLE" resultMap="resultProducto" parameterType="string">
+		call sp_consultaProductoAtNombre(#{nom});
+	</select>
+	
+	<select id="SQL_fotoProductos" statementType="CALLABLE" resultMap="resultFoto" parameterType="int">
+		call sp_fotoProducto(#{id});
+	</select>
+	
+	<insert id="SQL_InsertarProductos" statementType="CALLABLE" parameterType="ProductoIbatis">
+		call sp_registrarProducto(#{nomprod},#{precio},#{descripcion},#{fotoBytes},#{idcategoria},#{stock});
+	</insert>
+	<update id="SQL_ActualizarProductos" statementType="CALLABLE" parameterType="ProductoIbatis">
+		call sp_actualizarProducto(#{idproducto},#{nomprod},#{precio},#{descripcion},#{fotoBytes},#{idcategoria},#{stock});
+	</update>
+	<delete id="SQL_EliminarProductos" statementType="CALLABLE" parameterType="int">
+		call sp_eliminarProducto(#{id});
+	</delete>
+	<update id="SQL_ActualizarFotoProducto" statementType="CALLABLE" parameterType="ProductoIbatis">
+		call sp_actualizarFotoProducto(#{idproducto},#{fotoBytes});
+	</update>
+	
+</mapper>
+
+
+

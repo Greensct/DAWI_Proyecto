@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dawi">
+	<resultMap type="UsuarioIbatis" id="resultUsuario">
+		<id column="idusuario" property="idusuario"/>
+		<result column="nombres" property="nombres"/>
+		<result column="apellidos" property="apellidos"/>
+		<result column="email" property="email"/>
+		<result column="password" property="password"/>
+	</resultMap>
+	<resultMap type="EnlaceIbatis" id="resultEnlace">
+		<id column="idenlace" property="idEnlace"/>
+		<result column="descripcion" property="descripcion"/>
+		<result column="ruta" property="ruta"/>
+	</resultMap>
+	
+	<select id="SQL_InicarSesion" statementType="CALLABLE" resultMap="resultUsuario" parameterType="UsuarioIbatis">
+		call sp_iniciarSesion(#{email},#{password});
+	</select>
+	<select id="SQL_TraerEnlacesPorUSuario" statementType="CALLABLE" resultMap="resultEnlace" parameterType="int">
+		call sp_traesEnlacesPorUsuario(#{idusuario});
+	</select>
+	<insert id="SQL_InsertarUsuarios" statementType="CALLABLE" parameterType="UsuarioIbatis">
+		call sp_registrarUsuario(#{nombres},#{apellidos},#{email},#{password});
+	</insert>
+	<update id="SQL_ActualizarUsuarios" statementType="CALLABLE" parameterType="UsuarioIbatis">
+		call sp_actualizarUsuario(#{idusuario},#{nombres},#{apellidos},#{email},#{password});
+	</update>
+	<delete id="SQL_EliminarUsuarios" statementType="CALLABLE" parameterType="int">
+		call sp_eliminarUsuario(#{id});
+	</delete>
+	
+</mapper>
