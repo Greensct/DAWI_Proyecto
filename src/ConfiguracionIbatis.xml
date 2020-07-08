@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
 				<property name="url" value="jdbc:mysql://localhost/bd_gstore?useSSL=false"/>
 				<property name="username" value="root"/>
-				<property name="password" value="alex"/>
+				<property name="password" value="mysql"/>
 			</dataSource>
 		</environment>
 	</environments>
