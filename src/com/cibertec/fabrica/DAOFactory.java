@@ -11,7 +11,7 @@ public abstract class DAOFactory {
 	public static final int DB2 = 3;
 	public static final int SQLSERVER = 4;
 	public static final int XML = 5;
-
+	
 	// Registrar DAOs
 	public abstract ProductoDAO getProductoDAO();
 

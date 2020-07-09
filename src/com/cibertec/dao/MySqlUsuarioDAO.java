@@ -30,5 +30,21 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 
 		return null;
 	}
+	
+	@Override
+	public Usuario iniciarSesion(Usuario bean) {
+		Usuario obj=null;
+		//crear una sesión de la conexión "factory"
+		SqlSession session=factory.openSession();
+		try {
+			obj=(Usuario) session.selectOne("SQL_InicarSesion",bean);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			session.close();
+		}
+		return obj;
+	}
 
 }

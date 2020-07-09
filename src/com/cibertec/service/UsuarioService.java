@@ -8,5 +8,9 @@ public class UsuarioService {
 	DAOFactory fabrica = DAOFactory.getDAOFactory(1);
 	// Paso 2: indicar en DAO a trabajar
 	UsuarioDAO dao = fabrica.getUsuarioDAO();
+	
+	public Usuario iniciarSesion(Usuario bean) {
+		return dao.iniciarSesion(bean);
+	}
 
 }
