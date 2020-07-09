@@ -1,5 +1,7 @@
 package com.cibertec.dao;
 
+import java.io.Reader;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -7,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.cibertec.entidad.Enlace;
 import com.cibertec.entidad.Usuario;
 import com.cibertec.interfaces.UsuarioDAO;
 
@@ -65,6 +68,22 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 			session.close();
 		}
 		return obj;
+	}
+
+	@Override
+	public List<Enlace> traerEnlacePorUsuario(int codUsu) {
+		List<Enlace> lista=new ArrayList<Enlace>();
+		//crear una sesión de la conexión "factory"
+		SqlSession session=factory.openSession();
+		try {
+			lista=session.selectList("SQL_TraerEnlacesPorUSuario",codUsu);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			session.close();
+		}
+		return lista;
 	}
 
 }

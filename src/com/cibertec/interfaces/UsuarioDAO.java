@@ -15,4 +15,6 @@ public interface UsuarioDAO {
 	public List<Usuario> listProducto();
 	
 	public Usuario iniciarSesion(Usuario bean);//String login,String clave
+
+	public List<Enlace> traerEnlacePorUsuario(int codUsu);
 }

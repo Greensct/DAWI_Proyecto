@@ -1,5 +1,9 @@
 package com.cibertec.service;
 
+import java.util.List;
+
+import com.cibertec.entidad.Enlace;
+import com.cibertec.entidad.Usuario;
 import com.cibertec.fabrica.DAOFactory;
 import com.cibertec.interfaces.UsuarioDAO;
 
@@ -12,5 +16,7 @@ public class UsuarioService {
 	public Usuario iniciarSesion(Usuario bean) {
 		return dao.iniciarSesion(bean);
 	}
-
+	public List<Enlace> traerEnlancesPorUsuario(int codUsu) {
+		return dao.traerEnlacePorUsuario(codUsu);
+	}
 }
