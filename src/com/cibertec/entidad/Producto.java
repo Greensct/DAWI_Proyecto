@@ -9,8 +9,8 @@ public class Producto {
 	private String descripcion;
 	private File foto;
 	private byte[] fotoBytes;
-	private int idcategoria;
 	private int stock;
+	private int idcategoria;
 
 	public int getIdproducto() {
 		return idproducto;

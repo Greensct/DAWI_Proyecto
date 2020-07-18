@@ -2,7 +2,7 @@ package com.cibertec.entidad;
 
 public class Categoria {
 	private int idCategoria;
-	private String nomcategoria;
+	private String nombre;
 
 	public int getIdCategoria() {
 		return idCategoria;
@@ -12,12 +12,14 @@ public class Categoria {
 		this.idCategoria = idCategoria;
 	}
 
-	public String getNomcategoria() {
-		return nomcategoria;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setNomcategoria(String nomcategoria) {
-		this.nomcategoria = nomcategoria;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
+
+	
 
 }
