@@ -29,7 +29,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mapperUsuario.xml"/>	
 		<mapper resource="mapperProducto.xml"/>
 		<mapper resource="mapperCategoria.xml"/>
-		<mapper resource="mapperBoleta.xml"/>
+		
 	</mappers>
 </configuration>
 
