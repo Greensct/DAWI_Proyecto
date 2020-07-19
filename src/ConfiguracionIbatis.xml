@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.cibertec.entidad.Categoria" alias="CategoriaIbatis"/>
 		<typeAlias type="com.cibertec.entidad.Enlace" alias="EnlaceIbatis"/>
 		<typeAlias type="com.cibertec.entidad.Boleta" alias="BoletaIbatis"/>
-		<typeAlias type="com.cibertec.entidad.Detalle" alias="DetalleIbatis"/>
+		<typeAlias type="com.cibertec.entidad.Detalle" alias="DetalleIbatis"  />
 	</typeAliases>
 	<!-- Paso 2: conexión a la base de datos -->
 	<environments default="development">
@@ -29,7 +29,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mapperUsuario.xml"/>	
 		<mapper resource="mapperProducto.xml"/>
 		<mapper resource="mapperCategoria.xml"/>
-		<mapper resource="mapperBoleta.xml"/>
 	</mappers>
 </configuration>
 

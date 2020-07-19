@@ -10,9 +10,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BoletaAction extends ActionSupport{
 
 	private static final long serialVersionUID = 1L;
-	
+	/*
 	private List<Usuario> listUsuarios;
 	private List<Producto> listaProductos;
-	private List<Detalle> listaDetalle;
+	private List<Detalle> listaDetalle;*/
 
 }
