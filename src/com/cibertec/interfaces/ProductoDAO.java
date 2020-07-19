@@ -12,4 +12,10 @@ public interface ProductoDAO {
 	public int deleteProducto(int id);
 
 	public List<Producto> listProducto();
+	
+	public Producto findProducto(int id);
+	
+	public int updateFotoProducto(Producto pro);
+	
+	public List<Producto> listProductoAtNombre(String nom);
 }
