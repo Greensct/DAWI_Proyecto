@@ -22,7 +22,7 @@
 	  <s:remove var="MENSAJE"/>
 
     <div class="container">
-      <form class="form-signin" action="iniciarSesion" >
+      <form class="form-signin" action="iniciarSesion">
         <h2 class="form-signin-heading">Login</h2>
         <label for="inputEmail" class="sr-only">Usuario</label>
         <input type="text" name="login" id="inputEmail" class="form-control" placeholder="Ingrese el usuario" required autofocus>
