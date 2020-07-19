@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.dispatcher.SessionMap;
 
@@ -15,8 +16,8 @@ import com.cibertec.service.UsuarioService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+@ParentPackage("dawi")
 public class UsuarioAction extends ActionSupport {
-	private static final long serialVersionUID = 1L;
 	
 	//atributos para la sesión
 	private String login,clave;
