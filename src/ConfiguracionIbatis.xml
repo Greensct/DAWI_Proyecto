@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<transactionManager type="JDBC"/>
 			<dataSource type="UNPOOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost/bd_gstore?useSSL=false&allowPublicKeyRetrieval=true"/>
+				<property name="url" value="jdbc:mysql://localhost/bd_gstore?useSSL=false"/>
 				<property name="username" value="root"/>
 				<property name="password" value="alex"/>
 			</dataSource>

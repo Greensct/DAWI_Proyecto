@@ -32,7 +32,7 @@
 		  		
 		     	<span class="nav-item nav-link">${sessionScope.USUARIO.apellidos} ${sessionScope.USUARIO.nombres}</span>  
 		     
-		        <a href="cerrarSesion" class="nav-item nav-link">Cerar Sesión</a>
+		        <a href="cerrarSesion" class="nav-item nav-link">Cerrar Sesión</a>
 	      </div>
     </div>
 	</nav>
