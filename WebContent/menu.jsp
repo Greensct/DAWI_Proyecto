@@ -7,6 +7,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 <div class="pos-f-t">
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	  	  <div class="navbar-header">
@@ -50,6 +51,12 @@
 
 
 
+=======
+<p>Hola</p>
+<p>Adios</p>
+<p>Eh?</p>
+<p>Equisde</p>
+>>>>>>> branch 'master' of https://github.com/Greensct/DAWI_Proyecto.git
 </body>
 </html>
 

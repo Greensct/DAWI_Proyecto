@@ -1,5 +1,6 @@
 package com.cibertec.fabrica;
 
+import com.cibertec.interfaces.BoletaDAO;
 import com.cibertec.interfaces.CategoriaDAO;
 import com.cibertec.interfaces.ProductoDAO;
 import com.cibertec.interfaces.UsuarioDAO;
@@ -18,6 +19,8 @@ public abstract class DAOFactory {
 	public abstract CategoriaDAO getCategoriaDAO();
 
 	public abstract UsuarioDAO getUsuarioDAO();
+	
+	public abstract BoletaDAO getBoletaDAO();
 
 	public static DAOFactory getDAOFactory(int whichFactory) {
 		switch (whichFactory) {
