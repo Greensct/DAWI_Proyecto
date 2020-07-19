@@ -21,7 +21,7 @@
 	
 		   <c:forEach items="${sessionScope.ENLACES}" var="row">
 		    <li class="nav-item">
-		      <a class="nav-link" href="${row.ruta}">${row.descripcion}</a>
+		      <a class="nav-link" href="${row.ruta}">${row.descripcion} </a>
 		    </li>
 		</c:forEach>
 	
