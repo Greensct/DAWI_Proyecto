@@ -19,6 +19,8 @@ import com.opensymphony.xwork2.ActionSupport;
 @ParentPackage("dawi")
 public class UsuarioAction extends ActionSupport {
 	
+	private static final long serialVersionUID = 1L;
+
 	//atributos para la sesión
 	private String login,clave;
 	
