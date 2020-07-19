@@ -19,6 +19,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @ParentPackage("dawi")
 public class ProductoAction extends ActionSupport {
+
+	private static final long serialVersionUID = 1L;
 	private List<Producto> listaProductos;
 	private List<Categoria> listaCategorias;
 	private Producto producto;

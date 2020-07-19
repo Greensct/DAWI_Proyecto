@@ -9,6 +9,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.cibertec.entidad.Producto" alias="ProductoIbatis"/>
 		<typeAlias type="com.cibertec.entidad.Categoria" alias="CategoriaIbatis"/>
 		<typeAlias type="com.cibertec.entidad.Enlace" alias="EnlaceIbatis"/>
+		<typeAlias type="com.cibertec.entidad.Boleta" alias="BoletaIbatis"/>
+		<typeAlias type="com.cibertec.entidad.Detalle" alias="DetalleIbatis"/>
 	</typeAliases>
 	<!-- Paso 2: conexión a la base de datos -->
 	<environments default="development">
@@ -16,9 +18,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<transactionManager type="JDBC"/>
 			<dataSource type="UNPOOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost/bd_gstore?useSSL=false&allowPublicKeyRetrieval=true"/>
+				<property name="url" value="jdbc:mysql://localhost/bd_gstore?useSSL=false"/>
 				<property name="username" value="root"/>
-				<property name="password" value="alex"/>
+				<property name="password" value="mysql"/>
 			</dataSource>
 		</environment>
 	</environments>
@@ -27,6 +29,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mapperUsuario.xml"/>	
 		<mapper resource="mapperProducto.xml"/>
 		<mapper resource="mapperCategoria.xml"/>
+		<mapper resource="mapperBoleta.xml"/>
 	</mappers>
 </configuration>
 
