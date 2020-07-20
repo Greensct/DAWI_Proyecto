@@ -11,6 +11,28 @@
     <link href="css/signin.css" rel="stylesheet">
   </head>
   <body>
+  <!--  Caabecera Menu -->
+<div class="pos-f-t">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="navbar-header">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="principal.jsp">GStore</a>
+                  </div>
+          </div>
+
+      <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+
+          </ul>
+
+          <div class="navbar-nav ml-auto">
+				<a href="login.jsp" class="nav-item nav-link">Iniciar Sesion</a>
+                <a href="registro.jsp" class="nav-item nav-link">Registrarse</a>
+          </div>
+    </div>
+    </nav>
+</div>
+<!-- Cuerpo -->
 	  <s:if test="${sessionScope.MENSAJE !=null}">
 		<div class="alert alert-warning alert-dismissible fade show" role="alert" id="success-alert">
 		  <strong>Sistema:</strong> ${sessionScope.MENSAJE}

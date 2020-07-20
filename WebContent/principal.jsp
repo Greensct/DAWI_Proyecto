@@ -29,7 +29,6 @@
     </div>
     </nav>
 </div>
-
 <!-- Cuerpo -->
 <h2>Bienvenido a GStore!</h2>
 </body>
