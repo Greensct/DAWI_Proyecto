@@ -86,7 +86,6 @@
 															<th>Categoria</th>
 															<th>Stock</th>
 															<th>Comprar</th>
-															<th></th>
 														</tr>
 												</thead>
 												<tbody>
