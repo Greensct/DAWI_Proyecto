@@ -11,6 +11,8 @@ public class Producto {
 	private byte[] fotoBytes;
 	private int stock;
 	private int idcategoria;
+	
+	private String nombrcategoria;
 
 	public int getIdproducto() {
 		return idproducto;
@@ -74,6 +76,14 @@ public class Producto {
 
 	public void setStock(int stock) {
 		this.stock = stock;
+	}
+
+	public String getNombrcategoria() {
+		return nombrcategoria;
+	}
+
+	public void setNombrcategoria(String nombrcategoria) {
+		this.nombrcategoria = nombrcategoria;
 	}
 
 }

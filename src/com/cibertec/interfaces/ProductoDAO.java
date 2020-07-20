@@ -18,4 +18,6 @@ public interface ProductoDAO {
 	public int updateFotoProducto(Producto pro);
 	
 	public List<Producto> listProductoAtNombre(String nom);
+
+	public List<Producto> listProductoprincipal();
 }

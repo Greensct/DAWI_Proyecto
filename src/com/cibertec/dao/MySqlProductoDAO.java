@@ -91,6 +91,8 @@ public class MySqlProductoDAO implements ProductoDAO {
 		}
 		return lista;
 	}
+	
+	
 
 	@Override
 	public Producto findProducto(int id) {
@@ -128,6 +130,20 @@ public class MySqlProductoDAO implements ProductoDAO {
 		SqlSession session = factory.openSession();
 		try {
 			lista = session.selectList("SQL_listarProductosAtNombre", nom);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return lista;
+	}
+
+	@Override
+	public List<Producto> listProductoprincipal() {
+		List<Producto> lista = new ArrayList<Producto>();
+		SqlSession session = factory.openSession();
+		try {
+			lista = session.selectList("SQL_listarProductosPrincipal");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

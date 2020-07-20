@@ -12,13 +12,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="fotoBytes" property="fotoBytes"/>
 		<result column="idcategoria" property="idcategoria"/>
 		<result column="stock" property="stock"/>
+		<result column="nomcategoria" property="nombrcategoria"/>
+		
 	</resultMap>
 	<resultMap type="ProductoIbatis" id="resultFoto">
 		<result column="foto" property="foto"/>
 	</resultMap>
 	
 	<select id="SQL_listarProductos" statementType="CALLABLE" resultMap="resultProducto">
-		call sp_listAllMedicamentos();
+		call sp_listAllProductos();
+	</select>
+	
+	<select id="SQL_listarProductosPrincipal" statementType="CALLABLE" resultMap="resultProducto">
+		call sp_listProductosPrincipal();
 	</select>
 	
 	<select id="SQL_listarProductosAtNombre" statementType="CALLABLE" resultMap="resultProducto" parameterType="string">

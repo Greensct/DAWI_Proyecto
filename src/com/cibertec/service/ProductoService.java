@@ -18,6 +18,9 @@ public class ProductoService {
 	public List<Producto> listaProductos(){
 		return dao.listProducto();
 	}
+	public List<Producto> listaProductosPrincipal(){
+		return dao.listProductoprincipal();
+	}
 	public int registrarProducto(Producto pro) {
 		return dao.addProducto(pro);
 	}

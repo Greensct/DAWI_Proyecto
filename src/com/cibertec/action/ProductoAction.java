@@ -138,6 +138,13 @@ public class ProductoAction extends ActionSupport {
 		listaProductos = servicioProducto.listaProductos();
 		return "ok";
 	}
+	
+	// crear una acción que retorne un JSON
+		@Action(value = "/listAllPrincipal", results = { @Result(name = "ok", type = "json") })
+		public String listAllPrincipal() {
+			listaProductos = servicioProducto.listaProductosPrincipal();
+			return "ok";
+		}
 
 	// crear una acción que retorne un JSON
 	@Action(value = "/listAllProductosPorNombre", results = { @Result(name = "ok", type = "json") })
