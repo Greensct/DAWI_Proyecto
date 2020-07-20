@@ -32,8 +32,18 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 	
 	@Override
 	public int addUsuario(Usuario pro) {
-
-		return 0;
+		int estado = -1;
+		SqlSession session = factory.openSession();
+		try {
+			estado = session.insert("SQL_InsertarUsuarios", pro);
+			session.commit();
+		} catch (Exception e) {
+			session.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return estado;
 	}
 
 	@Override

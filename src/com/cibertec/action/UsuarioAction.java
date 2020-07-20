@@ -1,5 +1,6 @@
 package com.cibertec.action;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +31,7 @@ public class UsuarioAction extends ActionSupport {
 	//atributo tipo sesión
 	private Map<String, Object> session=(Map<String, Object>)ActionContext.getContext().getSession();
 
+	public Usuario usuario;
 	//constructor
 		public UsuarioAction() {
 			servicioUsuario=new UsuarioService();
@@ -70,6 +72,19 @@ public class UsuarioAction extends ActionSupport {
 			sessionActual.invalidate();
 			return "ok";
 		}
+		
+		@Action(value="/addUsuario",results=
+				{@Result(name="ok",type="redirect",location="/login.jsp") })
+				public String addUsuario() throws IOException {
+				int estado;
+				estado=servicioUsuario.registrarUsuario(usuario);
+				if(estado!=-1)
+				session.put("MENSAJE", "Se registro correctamente el producto");
+				else
+				session.put("MENSAJE", "Error en el registro del producto");
+				
+				 return "ok";
+				 }
 		
 
 		public String getLogin() {

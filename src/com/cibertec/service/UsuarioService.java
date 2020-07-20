@@ -3,6 +3,7 @@ package com.cibertec.service;
 import java.util.List;
 
 import com.cibertec.entidad.Enlace;
+import com.cibertec.entidad.Producto;
 import com.cibertec.entidad.Usuario;
 import com.cibertec.fabrica.DAOFactory;
 import com.cibertec.interfaces.UsuarioDAO;
@@ -19,4 +20,8 @@ public class UsuarioService {
 	public List<Enlace> traerEnlancesPorUsuario(int codUsu) {
 		return dao.traerEnlacePorUsuario(codUsu);
 	}
+	public int registrarUsuario(Usuario usu) {
+		return dao.addUsuario(usu);
+	}
+	
 }
