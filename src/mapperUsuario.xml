@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		call sp_traesEnlacesPorUsuario(#{idusuario});
 	</select>
 	<insert id="SQL_InsertarUsuarios" statementType="CALLABLE" parameterType="UsuarioIbatis">
-		call sp_registrarUsuario(#{nombres},#{apellidos},#{email},#{password});
+		call sp_registarUsuario(#{nombres},#{apellidos},#{email},#{password});
 	</insert>
 	<update id="SQL_ActualizarUsuarios" statementType="CALLABLE" parameterType="UsuarioIbatis">
 		call sp_actualizarUsuario(#{idusuario},#{nombres},#{apellidos},#{email},#{password});

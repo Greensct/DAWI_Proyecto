@@ -24,14 +24,14 @@ public class UsuarioAction extends ActionSupport {
 
 	//atributos para la sesión
 	private String login,clave;
+	private String nombres, apellidos, email, contra;
 	
+
 	//atributo del servicio
 	private UsuarioService servicioUsuario;
 	
 	//atributo tipo sesión
 	private Map<String, Object> session=(Map<String, Object>)ActionContext.getContext().getSession();
-
-	public Usuario usuario;
 	//constructor
 		public UsuarioAction() {
 			servicioUsuario=new UsuarioService();
@@ -72,12 +72,18 @@ public class UsuarioAction extends ActionSupport {
 			sessionActual.invalidate();
 			return "ok";
 		}
-		
+		//Accion para registrar usuario
 		@Action(value="/addUsuario",results=
 				{@Result(name="ok",type="redirect",location="/login.jsp") })
-				public String addUsuario() throws IOException {
+				public String addUsuario(){
+
+				Usuario obj = new Usuario();
+				obj.setNombres(nombres);
+				obj.setApellidos(apellidos);
+				obj.setEmail(email);
+				obj.setPassword(contra);
 				int estado;
-				estado=servicioUsuario.registrarUsuario(usuario);
+				estado=servicioUsuario.registrarUsuario(obj);
 				if(estado!=-1)
 				session.put("MENSAJE", "Se registro correctamente el producto");
 				else
@@ -85,8 +91,7 @@ public class UsuarioAction extends ActionSupport {
 				
 				 return "ok";
 				 }
-		
-
+	
 		public String getLogin() {
 			return login;
 		}
@@ -102,4 +107,44 @@ public class UsuarioAction extends ActionSupport {
 		public void setClave(String clave) {
 			this.clave = clave;
 		}
+
+		public String getNombres() {
+			return nombres;
+		}
+
+
+		public void setNombres(String nombres) {
+			this.nombres = nombres;
+		}
+
+
+		public String getApellidos() {
+			return apellidos;
+		}
+
+
+		public void setApellidos(String apellidos) {
+			this.apellidos = apellidos;
+		}
+
+
+		public String getEmail() {
+			return email;
+		}
+
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+
+		public String getContra() {
+			return contra;
+		}
+
+
+		public void setContra(String contra) {
+			this.contra = contra;
+		}
+
 }

@@ -18,7 +18,7 @@
                <div class="navbar-header">
                   <a class="navbar-brand" href="principal.jsp">GStore</a>
                   </div>
-          </div>
+          </div> 
 
       <div class="collapse navbar-collapse">
           <ul class="navbar-nav">
