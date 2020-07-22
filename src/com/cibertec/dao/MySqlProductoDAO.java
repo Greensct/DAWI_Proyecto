@@ -105,6 +105,7 @@ public class MySqlProductoDAO implements ProductoDAO {
 		} finally {
 			session.close();
 		}
+		
 		return bean;
 	}
 
