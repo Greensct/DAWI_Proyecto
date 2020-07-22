@@ -22,14 +22,13 @@ public class ProductoAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 	private List<Producto> listaProductos;
-	private List<Categoria> listaCategorias;
 	private Producto producto;
 	private int codigoProducto;
 	private int codigoCategoria;
 	private String nombre;
 	private String baseFoto;
 
-	// atributo tipo sesión
+	
 	private Map<String, Object> session = (Map<String, Object>) ActionContext.getContext().getSession();
 
 	private ProductoService servicioProducto;
@@ -38,11 +37,11 @@ public class ProductoAction extends ActionSupport {
 		servicioProducto = new ProductoService();
 	}
 
-	// crear una acción que retorne un JSON
+	
 	@Action(value = "/listAllCategoria", results = { @Result(name = "ok", type = "json") })
 	// public String listAllTipoAtCategoria() {
 	public String listAllCategoria() {
-		listaCategorias = servicioProducto.listaCategorias(codigoCategoria);
+		servicioProducto.listaCategorias(codigoCategoria);
 		return "ok";
 	}
 
@@ -57,110 +56,29 @@ public class ProductoAction extends ActionSupport {
 		return "ok";
 	}
 
-	// @Action(value="/listAllProductos",results= {@Result(name="ok",type="json") })
-	// public String listAllProductos() {
-	// listaProductos=servicioProducto.listAllProductos();
-	// return "ok";
-	// }
-//	 @Action(value="/listAllCategorias",results= {@Result(name="ok",type="json")
-//	 })
-//	 public String listAllCategorias() {
-//	 listaCategorias=servicioProducto.listAllCategorias();
-//	 return "ok";
-//	 }
-	//
-	// @Action(value="/addProducto",results=
-	// {@Result(name="ok",type="redirect",location="/producto.jsp") })
-	// public String addProducto() throws IOException {
-	// int estado;
-	// estado=servicioProducto.save(producto);
-	// if(estado!=-1)
-	// session.put("MENSAJE", "Se registro correctamente el producto");
-	// else
-	// session.put("MENSAJE", "Error en el registro del producto");
-	//
-	// return "ok";
-	// }
-	// @Action(value="/deleteProducto",results=
-	// {@Result(name="ok",type="redirect",location="producto.jsp") })
-	// public String deleteProducto() throws IOException {
-	// int estado;
-	// estado=servicioProducto.delete(codigo);
-	// if(estado!=-1)
-	// session.put("MENSAJE", "Se elimino correctamente el producto");
-	// else
-	// session.put("MENSAJE", "Error en la eliminación del producto");
-	//
-	// return "ok";
-	// }
-	//
-	//
-	//
-	// public List<Producto> getListaProductos() {
-	// return listaProductos;
-	// }
-	//
-	// public void setListaProductos(List<Producto> listaProductos) {
-	// this.listaProductos = listaProductos;
-	// }
-	//
-	// public List<Categoria> getListaCategorias() {
-	// return listaCategorias;
-	// }
-	//
-	// public void setListaCategorias(List<Categoria> listaCategorias) {
-	// this.listaCategorias = listaCategorias;
-	// }
-	//
-	// public Producto getProducto() {
-	// return producto;
-	// }
-	//
-	// public void setProducto(Producto producto) {
-	// this.producto = producto;
-	// }
-	//
-	// public int getCodigo() {
-	// return codigo;
-	// }
-	//
-	// public void setCodigo(int codigo) {
-	// this.codigo = codigo;
-	// }
-	//
-	//
-	//
-	// }
-
-	// crear una acción que retorne un JSON
 	@Action(value = "/listAllProductos", results = { @Result(name = "ok", type = "json") })
 	public String listAllProductos() {
 		listaProductos = servicioProducto.listaProductos();
 		return "ok";
 	}
-	
-	// crear una acción que retorne un JSON
-		@Action(value = "/listAllPrincipal", results = { @Result(name = "ok", type = "json") })
-		public String listAllPrincipal() {
-			listaProductos = servicioProducto.listaProductosPrincipal();
-			return "ok";
-		}
 
-	// crear una acción que retorne un JSON
+	@Action(value = "/listAllPrincipal", results = { @Result(name = "ok", type = "json") })
+	public String listAllPrincipal() {
+		listaProductos = servicioProducto.listaProductosPrincipal();
+		return "ok";
+	}
+
 	@Action(value = "/listAllProductosPorNombre", results = { @Result(name = "ok", type = "json") })
 	public String listAllProductosPorNombre() {
 		listaProductos = servicioProducto.listaProductosPorNombre(nombre);
 		return "ok";
 	}
 
-	// crear una acción para registrar Producto
 	@Action(value = "/addProducto", results = { @Result(name = "ok", type = "redirect", location = "/producto.jsp") })
 	public String addMedicamento() throws IOException {
 		int estado;
 		if (producto.getFoto() != null) {
 
-			// obtener la imagen seleccionada de la vista, dicha imagen se encuentra en el
-			// atributo foto que es de tipo File
 			InputStream is = new FileInputStream(producto.getFoto());
 			// crear un arreglo de bytes con el tamaño del archivo "is"
 			byte arreglo[] = new byte[is.available()];
@@ -179,7 +97,6 @@ public class ProductoAction extends ActionSupport {
 		return "ok";
 	}
 
-	// crear una acción para eliminar Producto
 	@Action(value = "/deleteProducto", results = {
 			@Result(name = "ok", type = "redirect", location = "/producto.jsp") })
 	public String deleteProducto() {
@@ -251,15 +168,6 @@ public class ProductoAction extends ActionSupport {
 	public void setCodigoProducto(int codigoProducto) {
 		this.codigoProducto = codigoProducto;
 	}
-
-	// public List<TipoProducto> getListaTipoMedicamentos() {
-	// return listaTipoMedicamentos;
-	// }
-
-	// public void setListaTipoMedicamentos(List<TipoMedicamento>
-	// listaTipoMedicamentos) {
-	// this.listaTipoMedicamentos = listaTipoMedicamentos;
-	// }
 
 	public int getCodigoCategoria() {
 		return codigoCategoria;
