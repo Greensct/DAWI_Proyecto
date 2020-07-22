@@ -70,7 +70,7 @@ public class MySqlCategoriaDAO implements CategoriaDAO {
 	}
 
 	@Override
-	public List<Categoria> listAllCategorias(int cate) {
+	public List<Categoria> listAllCategorias(int cat) {
 		// TODO Auto-generated method stub
 		return null;
 	}

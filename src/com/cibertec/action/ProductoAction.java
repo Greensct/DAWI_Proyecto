@@ -62,12 +62,12 @@ public class ProductoAction extends ActionSupport {
 	// listaProductos=servicioProducto.listAllProductos();
 	// return "ok";
 	// }
-	// @Action(value="/listAllCategorias",results= {@Result(name="ok",type="json")
-	// })
-	// public String listAllCategorias() {
-	// listaCategorias=servicioProducto.listAllCategorias();
-	// return "ok";
-	// }
+//	 @Action(value="/listAllCategorias",results= {@Result(name="ok",type="json")
+//	 })
+//	 public String listAllCategorias() {
+//	 listaCategorias=servicioProducto.listAllCategorias();
+//	 return "ok";
+//	 }
 	//
 	// @Action(value="/addProducto",results=
 	// {@Result(name="ok",type="redirect",location="/producto.jsp") })

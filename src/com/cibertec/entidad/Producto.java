@@ -3,7 +3,7 @@ package com.cibertec.entidad;
 import java.io.File;
 
 public class Producto {
-	private int idproducto;
+	private int idProducto;
 	private String nomprod;
 	private double precio;
 	private String descripcion;
@@ -14,12 +14,13 @@ public class Producto {
 	
 	private String nombrcategoria;
 
-	public int getIdproducto() {
-		return idproducto;
+	
+	public int getIdProducto() {
+		return idProducto;
 	}
 
-	public void setIdproducto(int idproducto) {
-		this.idproducto = idproducto;
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
 	}
 
 	public String getNomprod() {

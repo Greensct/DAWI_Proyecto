@@ -10,7 +10,7 @@ public interface CategoriaDAO {
 	public int updateCategoria(Categoria cat);
 	public int deleteCategoria(int id);
 	public Categoria findCategoria(int id);
-	public List<Categoria> listAllCategorias(int cate);
+	public List<Categoria> listAllCategorias(int cat);
 	
 	
 }
