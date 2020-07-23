@@ -358,6 +358,8 @@
 
 <script type="text/javascript">    
     $(document).ready(function(){     
+    	cargarTabla();
+    	cargarComboCategoria();
         $('#idRegistra').bootstrapValidator({      
         	 fields:{
         		 

@@ -14,10 +14,10 @@
 <body>
 <table border="0" align="center" width="1000">
 <tr bgcolor="skyblue">
-<th><a href="">Catalogo</a>Catalogo</th>
-<th><a href="">Catalogo</a>Registrar Producto</th>
-<th><a href="">Catalogo</a>Consultar Ventas</th>
 <th><a href="">Catalogo</a></th>
+<th><a href="">Registrar Producto</a></th>
+<th><a href="">Consultar Ventas</a></th>
+<th><a href=""></a></th>
 <th width="200"></th>
 </tr>
 </table>
