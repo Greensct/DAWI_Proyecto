@@ -43,15 +43,6 @@
 </div>	
 <!-- Cuerpo -->
 <h2>Bienvenido a GStore!</h2>
-<s:if test="${sessionScope.MENSAJE !=null}">
-<div class="alert alert-warning alert-dismissible fade show" role="alert" id="success-alert">
-  <strong>Sistema:</strong> ${sessionScope.MENSAJE}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-</s:if>
-<s:remove var="MENSAJE"/>
 
 <!-- The Modal -->
   <div class="modal fade" id="myEliminar" data-backdrop="static">
