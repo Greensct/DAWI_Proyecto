@@ -41,7 +41,7 @@ public class UsuarioAction extends ActionSupport {
 		//acción para iniciar sesión
 		@Action(value="/iniciarSesion",results= {
 													@Result(name="ok",type="redirect",location="/menu.jsp"),
-													@Result(name="error",type="redirect",location="/login.jsp")
+													@Result(name="error",type="redirect",location="/menu.jsp")
 												})
 		public String iniciarSesion() {
 			//crear un objeto de la clase usuario y setear los atributos login y clave
