@@ -18,7 +18,7 @@
 	  <div class="collapse navbar-collapse">
 		  <ul class="navbar-nav">
 	
-		   <c:forEach items="${sessionScope.ENLACES}" var="row">
+		   <c:forEach items="${sessionScope.ENLACES}" var="row"> 
 		    <li class="nav-item">
 		      <a class="nav-link" href="${row.ruta}">${row.descripcion} </a>
 		    </li>
