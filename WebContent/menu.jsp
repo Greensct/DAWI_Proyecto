@@ -54,7 +54,6 @@
 <p>Adios</p>
 <p>Eh?</p>
 <p>Equisde</p>
->>>>>>> branch 'master' of https://github.com/Greensct/DAWI_Proyecto.git
 </body>
 </html>
 
